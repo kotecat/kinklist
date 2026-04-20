@@ -174,6 +174,7 @@ $(function(){
 
             // Make export button work
             $('#Export').on('click', inputKinks.export);
+            $('#ExportOffline').on('click', inputKinks.exportOffline);
             $('#URL').on('click', function(){ this.select(); });
 
             // On resize, redo columns
@@ -292,48 +293,31 @@ $(function(){
 
             }
         },
-        export: function(){
-            var username = prompt("Please enter your name");
-            if(typeof username !== 'string') return;
-            else if (username.length ) username = '(' + username + ')';
-
-            $('#Loading').fadeIn();
-            $('#URL').fadeOut();
-
+        buildCanvas: function(username) {
             // Constants
             var numCols = 6;
-            var columnWidth = 250;
+            var columnWidth = 260;
             var simpleTitleHeight = 35;
             var titleSubtitleHeight = 50;
             var rowHeight = 25;
-            var offsets = {
-                left: 10,
-                right: 10,
-                top: 50,
-                bottom: 10
-            };
+            var offsets = { left: 10, right: 10, top: 50, bottom: 10 };
 
-            // Find out how many we have of everything
             var numCats = $('.kinkCategory').length;
             var dualCats = $('.kinkCategory th + th + th').length;
             var simpleCats = numCats - dualCats;
             var numKinks = $('.kinkRow').length;
 
-            // Determine the height required for all categories and kinks
             var totalHeight = (
-                    (numKinks * rowHeight) +
-                    (dualCats * titleSubtitleHeight) +
-                    (simpleCats * simpleTitleHeight)
+                (numKinks * rowHeight) +
+                (dualCats * titleSubtitleHeight) +
+                (simpleCats * simpleTitleHeight)
             );
 
-            // Initialize columns and drawStacks
             var columns = [];
             for(var i = 0; i < numCols; i++){
                 columns.push({ height: 0, drawStack: []});
             }
 
-            // Create drawcalls and place them in the drawStack
-            // for the appropriate column
             var avgColHeight = totalHeight / numCols;
             var columnIndex = 0;
             $('.kinkCategory').each(function(){
@@ -347,45 +331,36 @@ $(function(){
                 catHeight += (fields.length === 1) ? simpleTitleHeight : titleSubtitleHeight;
                 catHeight += (catKinks.length * rowHeight);
 
-                // Determine which column to place this category in
                 if((columns[columnIndex].height + (catHeight / 2)) > avgColHeight) columnIndex++;
                 while(columnIndex >= numCols) columnIndex--;
                 var column = columns[columnIndex];
 
-                // Drawcall for title
                 var drawCall = { y: column.height };
                 column.drawStack.push(drawCall);
                 if(fields.length < 2) {
                     column.height += simpleTitleHeight;
-                    drawCall.type =  'simpleTitle';
+                    drawCall.type = 'simpleTitle';
                     drawCall.data = catName;
-                }
-                else {
+                } else {
                     column.height += titleSubtitleHeight;
-                    drawCall.type =  'titleSubtitle';
-                    drawCall.data = {
-                        category: catName,
-                        fields: fields
-                    };
+                    drawCall.type = 'titleSubtitle';
+                    drawCall.data = { category: catName, fields: fields };
                 }
 
-                // Drawcalls for kinks
                 $cat.find('.kinkRow').each(function(){
                     var $kinkRow = $(this);
                     var drawCall = { y: column.height, type: 'kinkRow', data: {
-                            choices: [],
-                            text: $kinkRow.data('kink')
+                        choices: [],
+                        text: $kinkRow.data('kink')
                     }};
                     column.drawStack.push(drawCall);
                     column.height += rowHeight;
 
-                    // Add choices
                     $kinkRow.find('.choices').each(function(){
                         var $selection = $(this).find('.choice.selected');
                         var selection = ($selection.length > 0)
-                                ? $selection.data('level')
-                                : Object.keys(level)[0];
-
+                            ? $selection.data('level')
+                            : Object.keys(level)[0];
                         drawCall.data.choices.push(selection);
                     });
                 });
@@ -407,7 +382,6 @@ $(function(){
             for(var i = 0; i < columns.length; i++) {
                 var column = columns[i];
                 var drawStack = column.drawStack;
-
                 var drawX = offsets.left + (columnWidth * i);
                 for(var j = 0; j < drawStack.length; j++){
                     var drawCall = drawStack[j];
@@ -417,20 +391,27 @@ $(function(){
                 }
             }
 
-            //return $(canvas).insertBefore($('#InputList'));
+            return canvas;
+        },
+        export: function(){
+            var username = prompt("Please enter your name");
+            if(typeof username !== 'string') return;
+            else if (username.length) username = '(' + username + ')';
 
-            // Send canvas to imgur
+            $('#Loading').fadeIn();
+            $('#URL').fadeOut();
+
+            var canvas = inputKinks.buildCanvas(username);
+
             $.ajax({
                 url: 'https://api.imgur.com/3/image',
                 type: 'POST',
                 headers: {
-                    // Your application gets an imgurClientId from Imgur
                     Authorization: 'Client-ID ' + imgurClientId,
                     Accept: 'application/json'
                 },
                 data: {
-                    // convert the image data to base64
-                    image:  canvas.toDataURL().split(',')[1],
+                    image: canvas.toDataURL().split(',')[1],
                     type: 'base64'
                 },
                 success: function(result) {
@@ -443,6 +424,42 @@ $(function(){
                     alert('Failed to upload to imgur, could not connect');
                 }
             });
+        },
+        exportOffline: function(){
+            var username = prompt("Please enter your name");
+            if(typeof username !== 'string') return;
+            else if (username.length) username = '(' + username + ')';
+
+            var canvas = inputKinks.buildCanvas(username);
+
+            // Имя файла: kinklist-username.png или просто kinklist.png
+            var safeName = username
+                .replace(/^\(|\)$/g, '')
+                .replace(/[^a-zA-Z0-9а-яА-ЯёЁ_\-]/g, '_');
+            var fileName = 'kinklist' + (safeName ? '-' + safeName : '') + '.png';
+
+            // Попытка через canvas.toBlob (лучше для больших картинок)
+            if (canvas.toBlob) {
+                canvas.toBlob(function(blob){
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+                }, 'image/png');
+            } else {
+                // Fallback через data URL
+                var dataUrl = canvas.toDataURL('image/png');
+                var a = document.createElement('a');
+                a.href = dataUrl;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
         },
         encode: function(base, input){
             var hashBase = inputKinks.hashChars.length;

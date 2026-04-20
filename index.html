@@ -18,22 +18,23 @@
             <button id="Edit"></button>
             <h1>Kinklist</h1>
             <select id="listType">
-              <option value="classic">Classic</option>
-              <option value="detailed">Detailed</option>
-              <option value="plsno">Please Don't</option>
+                <option value="classic">Классический</option>
+                <option value="detailed">Детальный</option>
+                <option value="plsno">Полный</option>
             </select>
             
             <div class="legend">
-                <div><span data-color="#FFFFFF" class="choice notEntered"></span> <span class="legend-text">Not Entered</span></div>
-                <div><span data-color="#6DB5FE" class="choice favorite"></span> <span class="legend-text">Favorite</span></div>
-                <div><span data-color="#23FD22" class="choice like"></span> <span class="legend-text">Like</span></div>
-                <div><span data-color="#FDFD6B" class="choice indifferent"></span> <span class="legend-text">Indifferent</span></div>
-                <div><span data-color="#DB6C00" class="choice maybe"></span> <span class="legend-text">Maybe</span></div>
-                <div><span data-color="#920000" class="choice limit"></span> <span class="legend-text">Limit</span></div>
+                <div><span data-color="#FFFFFF" class="choice notEntered"></span> <span class="legend-text">Не выбрано</span></div>
+                <div><span data-color="#6DB5FE" class="choice favorite"></span> <span class="legend-text">Любимое</span></div>
+                <div><span data-color="#23FD22" class="choice like"></span> <span class="legend-text">Нравится</span></div>
+                <div><span data-color="#FDFD6B" class="choice indifferent"></span> <span class="legend-text">Безразлично</span></div>
+                <div><span data-color="#DB6C00" class="choice maybe"></span> <span class="legend-text">Может быть</span></div>
+                <div><span data-color="#920000" class="choice limit"></span> <span class="legend-text">Нет</span></div>
             </div>
             <div id="ExportWrapper">
                 <input type="text" id="URL">
-                <button id="Export">Export</button>
+                <button id="Export" class="Export">Export</button>
+                <button id="ExportOffline" class="Export">Save</button>
                 <div id="Loading">Loading</div>
             </div>
             <button id="StartBtn"></button>
@@ -41,282 +42,282 @@
         </div>
         <div id="EditOverlay" class="overlay">
             <textarea id="Kinks">
-#Bodies
-(General)
-* Skinny
-? Expresses an interest in characters that are waifish, thin, or slender.
-* Chubby
-? Expresses an interest in characters that are well-rounded, full in form, and pudgy.
-* Small breasts
-? Expresses an interest in breasts that are particularly small, sometimes to the point of appearing absent.
-* Large breasts
-? Expresses an interest in breasts that are particularly large.
-* Small cocks
-? Expresses an interest in cocks that are below average size.
-* Large cocks
-? Expresses an interest in cocks taht are above average size.
+# Телосложение
+(Общее)
+* Худые
+? Интерес к персонажам, которые описываются как хрупкие, тонкие или стройные.
+* Пухлые
+? Интерес к персонажам с округлыми, полными формами, пухлым.
+* Маленькая грудь
+? Интерес к особенно маленькой груди, иногда вплоть до кажущегося ее отсутствия.
+* Большая грудь
+? Интерес к особенно большой груди.
+* Маленькие члены
+? Интерес к пенисам размера ниже среднего.
+* Большие члены
+? Интерес к пенисам размера выше среднего.
 
-#Clothing
-(Self, Partner)
-* Clothed sex
-? Engaging in an RP where you and/or your partner are not undressed during sexual interaction.
-* Lingerie
-? Expresses an interest in the inclusion of lingerie in the sexual context of an RP, or an interest in characters wearing such.
-* Stockings
-? Expresses an interest in the inclusion of stockings in the sexual context of an RP, or an interest in characters wearing such.
-* Heels
-? Expresses an interest in the inclusion of high heeled shoes in the sexual context of an RP, or an interest in characters wearing such.
-* Leather
-? Expresses an interest in the inclusion of leather clothing in the sexual context of an RP, or an interest in characters wearing such.
-* Latex
-? The usage of latex and/or rubber material worn as clothing
-* Uniform / costume
-? Expresses an interest in the inclusion of uniforms or costumes in the sexual context of an RP, or an interest in characters wearing such.
-* Cross-dressing
-? Engaging in an RP where one or more characters dress in the clothes of the gender opposite to their own.
+# Одежда
+(На себе, На партнере)
+* Секс в одежде
+? Участие в RP, где вы и/или ваш партнер не раздеваетесь во время сексуального взаимодействия.
+* Нижнее белье
+? Интерес к включению нижнего белья в сексуальный контекст RP, или интерес к персонажам, носящим его.
+* Чулки
+? Интерес к включению чулок в сексуальный контекст RP, или интерес к персонажам, носящим их.
+* Каблуки
+? Интерес к включению обуви на высоком каблуке в сексуальный контекст RP, или интерес к персонажам, носящим её.
+* Кожа
+? Интерес к включению кожаной одежды в сексуальный контекст RP, или интерес к персонажам, носящим её.
+* Латекс
+? Использование изделий из латекса и/или резины в качестве одежды.
+* Униформа / Костюм
+? Интерес к включению униформы или костюмов в сексуальный контекст RP, или интерес к персонажам, носящим их.
+* Кроссдрессинг
+? Участие в RP, где один или несколько персонажей одеваются в одежду, противоположную их полу.
 
-#Groupings
-(General)
-* You and 1 male
-* You and 1 female
-* You and MtF trans
-* You and FtM trans
-* You and 1 male, 1 female
-* You and 2 males
-* You and 2 females
-* Orgy
-? multiple male and female characters
+# Группировки
+(Общее)
+* Вы и 1 мужчина
+* Вы и 1 женщина
+* Вы и MtF транс
+* Вы и FtM транс
+* Вы и 1 мужчина, 1 женщина
+* Вы и 2 мужчины
+* Вы и 2 женщины
+* Оргия
+? множество мужских и женских персонажей
 
-#General
-(Giving, Receiving)
-* Romance / Affection
-? Displaying or expressing love or strong affection, passion, either during love making or during normal scenes.
-* Handjob / Fingering
-? Sexual stimulation by direct, physical contact of the hands or fingers to the genitals.
-* Blowjob
-? Sexual stimulation by direct, physical contact of the mouth or tongue to male genitals
-* Deep throat
-? The act of penetrating the mouth of another character to the depths at which the penis or insertion enters the back of the mouth cavity and/or throat, sometimes causing a gag reflex, or being the recipient of such actions.
-* Swallowing
-? The act of orally consuming semen, either directly or indirectly from a penis.
-* Facials
-? The act of cumming directly onto one's face
-* Cunnilingus
-? Sexual stimulation by direct, physical contact of the mouth or tongue to female genitals
-* Face-sitting
-? A sexual practice where someone sits on another character's face with their buttocks or genitals, causing the person to be smothered, sometimes to the point asphyxiation; often done as form of forcing oral gratification.
-* Edging
-? Keeping on the edge of climax without orgasm
-* Teasing
-? Refers to extended scenes of foreplay prior to explicit, sexual intercourse, which may be physical and/or verbal, typically to arouse one's partner to the point of sexual frustration or desperation.
+# Общее
+(Давать, Получать)
+* Романтика / Нежность
+? Проявление любви и сильной привязанности во время секса или обычных сцен.
+* Хендджоб / Фингеринг
+? Сексуальная стимуляция путем прямого физического контакта рук или пальцев с гениталиями.
+* Минет (Blowjob)
+? Сексуальная стимуляция мужских гениталий ртом или языком.
+* Глубокая глотка
+? Проникновение в рот партнера на глубину, когда член достает до задней стенки горла, иногда вызывая рвотный рефлекс, или получение таких действий.
+* Глотание
+? Акт перорального употребления спермы, напрямую из пениса или косвенно.
+* Фейшиал
+? Акт семяизвержения непосредственно на лицо.
+* Куннилингус
+? Сексуальная стимуляция женских гениталий ртом или языком.
+* Фейсситтинг
+? Практика, при которой кто-то садится на лицо другого ягодицами или гениталиями, иногда вплоть до асфиксии; часто делается как форма принуждения к оральному удовольствию.
+* Эддинг (Edging)
+? Удержание на грани кульминации без оргазма.
+* Тизер (Дразнение)
+? Затянутая прелюдия для доведения партнера до состояния сексуального отчаяния или фрустрации.
 
-#Ass play
-(Giving, Receiving)
-* Anal toys
-? Refers to the inclusion of anal penetration with sex toys, including but not limited to dildos, vibrators, anal eggs, anal beads, etc.
-* Anal sex/pegging
-? Being penetrated by a partner, with a penis or strap-on
-* Rimming
-? The act of giving oral stimulation to a partner's anus, by the means of licking and/or penetrating the recipient's anus with the tongue.
-* Double penetration
-? The act of penetrating a single character's anus with two objects, including but not limited to the penis, sex toys, fist etc., or receiving such.
-* Anal fisting
-? The act of inserting one's hand(s) and/or arm(s) into one's partner's anus, or being the recipient of such acts.
+# Игры с задницей
+(Давать, Получать)
+* Анальные игрушки
+? Включение анального проникновения секс-игрушками (дилдо, вибраторы, шарики и т.д.).
+* Анальный секс / Пеггинг
+? Проникновение партнера с помощью члена или страпона.
+* Римминг
+? Оральная стимуляция ануса партнера путем лизания и/или проникновения языком.
+* Двойное проникновение
+? Проникновение в анус персонажа двумя объектами (членами, игрушками и т.д.), или получение такого.
+* Анальный фистинг
+? Введение руки или кисти в анус партнера, или получение таких действий.
 
-#Restrictive
-(Self, Partner)
-* Gag
-? The act of placing and lodging an object in another character's mouth to force him or her to breathe through his or her nose, as well as creating the inability to speak, or receiving such actions.
-* Collar
-? Wearing a collar around the neck
-* Leash
-? Being lead around on a leash
-* Chastity
-? Sexual abstinence, either willing or forced; this can include someone simply abstaining from sexual activity, or the wearing of a device that prevents it.
-* Bondage (Light)
-? The use of bondage that is mild or moderate in either the position in which it causes the bound character to be in, the duration for which the character will be in bondage, the level of discomfort caused by the bondage or the amount of immobilization that will occur due to the bondage.
-* Bondage (Heavy)
-? The use of bondage that is extreme in either the position in which it causes the bound character to be in, the duration for which the character will be in bondage, the level of discomfort caused by the bondage or the amount of immobilization that will occur due to the bondage.
-* Encasement
-? one’s whole body being wrapped up like a mummy in a latex suit, sleepsack, or other fetish gear for the purposes of sexual gratification.
+# Ограничения
+(На себе, На партнере)
+* Кляп
+? Помещение предмета в рот для принуждения дышать через нос и лишения возможности говорить.
+* Ошейник
+? Ношение ошейника на шее.
+* Поводок
+? Вождение на поводке.
+* Пояс верности (Chastity)
+? Сексуальное воздержание (добровольное или принудительное), включая ношение устройства, предотвращающего секс.
+* Бондаж (Легкий)
+? Использование мягкого или умеренного бондажа (по уровню дискомфорта, времени и степени обездвиживания).
+* Бондаж (Тяжелый)
+? Использование экстремального бондажа (по уровню дискомфорта, времени и степени обездвиживания).
+* Заковывание (Encasement)
+? Упаковка тела целиком (как мумия) в латекс, слипсак или другое фетиш-снаряжение.
 
-#Toys
-(Self, Partner)
-* Dildos
-? an object shaped like an erect penis used for sexual stimulation.
-* Plugs
-? a sex toy of a type designed to be inserted into the rectum.
-* Vibrators
-? a vibrating device used for sexual stimulation.
-* Sounding
-? The act of inserting metal rods into a male or female's urethra, or receiving such actions; technically implies rods that resonate and/or vibrate in response to a form of stimulation, but does not necessarily mean so.
+# Игрушки
+(На себе, На партнере)
+* Дилдо
+? Объект в форме эрегированного пениса для сексуальной стимуляции.
+* Пробки
+? Секс-игрушка для введения в прямую кишку.
+* Вибраторы
+? Вибрирующее устройство для сексуальной стимуляции.
+* Зондирование (Sounding)
+? Введение металлических стержней в уретру мужчины или женщины; технически подразумевает стержни, которые резонируют/вибрируют.
 
-#Domination
-(As Dominant, As Submissive)
-* General Dom / General Sub
-? Catchall for Dominant/Submissive Activities.
-* Domestic servitude
-? Being served by a butler, waitress, chauffeur, maid or housekeeper, or serving as one.
-* Slavery
-? Serving as the dominant's beck and call, or recieving such service, without choice.
-* Pet play
-? Petplay is a in role in which the focus is on the sub entering the altered mind space of a different species, often a dog, cat, or horse.
+# Доминирование
+(Как Доминант, Как Сабмиссив)
+* Общий Дом / Общий Саб
+? Категория для общих практик доминирования/подчинения.
+* Домашнее рабство
+? Обслуживание в роли дворецкого, горничной, официантки и т.д.
+* Рабство
+? Служение по первому требованию доминанта без права выбора.
+* Пет-плей (Игры в питомцев)
+? Ролевая игра, где саб переходит в состояние психики животного (собаки, кошки, лошади).
 * DD/lg, MD/lb
-? Daddy or Mommy Dom/ Littly Girl or Boy. The daddy/mommy is the more dominant half of the relationship, the little is the more submissive.
-* Discipline
-? The use of reinforcement (rewards and/or punishments) in order to train a submissive to obey the various commands of a master.
-* Begging
-? The self-abasing act of pleading, as a form of submission, being incorporated into an RP.
-* Forced orgasm
-? A forced orgasm is consensual BDSM or kinky sexual play whereby a person consents to be forced to orgasm in a way that is beyond their control.
-* Orgasm control
-? Refers to the dominant being in control of when the submissive achieves orgasm, either by physical means or by command; typically involves domination and/or excessive teasing and edging; orgasm may be completely denied.
-* Orgasm denial
-? Refers to the dominant denying the submissive orgasm.
-* Power exchange
-? A relationship with service at the core.
+? Папочка/Мамочка Доминант / Маленькая девочка или мальчик. Папочка/мамочка — доминирующая половина, малыш — подчиняющаяся.
+* Дисциплина
+? Использование поощрений и/или наказаний для обучения саба подчиняться приказам.
+* Умоляние
+? Самоуничижительное прошение как форма подчинения.
+* Принудительный оргазм
+? БДСМ-практика, где человек дает согласие на принуждение к оргазму способами вне его контроля.
+* Контроль оргазма
+? Доминант контролирует, когда саб достигает оргазма (физически или по команде); часто включает тизинг, эддинг или полный отказ.
+* Отказ в оргазме
+? Доминант запрещает сабу испытывать оргазм.
+* Обмен властью
+? Отношения, в основе которых лежит служение.
 
-#No consent
-(Aggressor, Target)
-* Non-con / rape
-? taking/being taken against one's will, often through force
-* Blackmail / coercion
-? Refers to the inclusion of Coercion and/or Blackmail in the context of the story arc of an RP, often in the form of a semi-consensual means of receiving sex from a partner.
-* Kidnapping
-? The act of abducting a character in an RP for the purpose of abusing, often sexually, or being abducted for such reasons; often implies indefinite imprisonment.
-* Drugs
-? The use of illicit drugs in the context of an RP, typically to disorientate or otherwise mentally incapacitate a character, or to elevate the sensations of sex.
-* Alcohol
-? The use of alcohol in the context of an RP, typically to disorientate or otherwise mentally incapacitate a character, or to elevate the sensations of sex.
-* Sleep play
-? Engaging in sexual acts with an unconscious/asleep partner
+# Без согласия (Нон-кон)
+(Агрессор, Жертва)
+* Нон-кон / Изнасилование
+? Взятие партнера против его воли, с применением силы.
+* Шантаж / Принуждение
+? Включение шантажа в сюжет как полу-добровольного способа получения секса.
+* Похищение
+? Похищение персонажа для сексуального насилия; часто подразумевает бессрочное заточение.
+* Наркотики
+? Использование наркотиков для дезориентации или усиления ощущений.
+* Алкоголь
+? Использование алкоголя для дезориентации или усиления ощущений.
+* Слип-плей
+? Занятие сексом с бессознательным/спящим партнером.
 
-#Taboo
-(General)
-* Incest
-? Engaging in an RP in which at least two characters will be related
-* Age Gap
-? Refers to scenes in which there is a signifigant gap in the ages of characters.
-* Interracial
-? Scenes based on interracial interactions without relying on racial stereotypes.
-*Raceplay
-? Scenes based on racial stereotypes or racism, including scenes set in racist settings.
-* Bestiality
-? Refers to a sapient character engaging in a sexual act with a non-sapient animal, or playing a non-sapient animal in an RP and being engaged by a sapient character.
-* Necrophilia
-? The act of having sex with a dead, or otherwise unconscious or inanimate, character that was once alive, or, theoretically, receiving such actions.
-* Cheating
-? Where one or both partners are being unfaithful to significant others.
-* Exhibitionism
-? Engaging in an RP in which the setting is of a public nature; typically used in conjunction with exhibitionism and/or humiliation.
-* Voyeurism
-? Refers to the derivation of sexual stimulation from either/or the action of watching, typically in secret, a person (or people) reveal themselves or do something otherwise explicit, or the act of revealing one's self and/or doing something otherwise explicit with the intent to be viewed.
+# Табу
+(Общее)
+* Инцест
+? Участие в RP, где как минимум два персонажа являются родственниками.
+* Разница в возрасте
+? Сцены со значительной разницей в возрасте между персонажами.
+* Межрасовые отношения
+? Сцены без опоры на расовые стереотипы.
+* Расовые игры (Raceplay)
+? Сцены, основанные на расовых стереотипах или расизме.
+* Зоофилия (Бестиалити)
+? Разумный персонаж вступает в половой акт с неразумным животным.
+* Некрофилия
+? Секс с мертвым или бессознательным персонажем.
+* Измена
+? Когда один или оба партнера изменяют своим вторым половинкам.
+* Эксгибиционизм
+? RP в публичном месте; обычно связано с унижением или эксгибиционизмом.
+* Вуайеризм
+? Получение сексуального удовлетворения от тайного наблюдения за обнажающимися людьми или самим актом обнажения перед другими.
 
-#Surrealism
-(Self, Partner)
-* Futanari/Futa
-? characters who have an overall feminine body, but have both female and male genitalia (although testicles are not always present)
-* Furry
-? Anthropomorphic animal characters.
-* Vore
-? The act of physically consuming another character
-* Transformation
-? The act of causing the physical characteristics of a participant of an RP, possibly including one's self, by magical or chemical means, to change in a dramatic fashion; may refer to a myriad of different types of transformations, and connotates receiving sexual pleasure from the act of transformation itself.
-* Tentacles
-? Engaging in an RP in which self-sentient tentacles or tentacle-like appendages will penetrate a character; often implies multiple penetration.
-* Monster or Alien
-? Various types of monsters, Extraterrestrials, and aesthetically challenging characters.
-* Ghost
-? The formerly living, not currently in posession of a body
+# Сюрреализм
+(На себе, На партнере)
+* Футанари/Фута
+? Персонажи с женственным телом, но обладающие как женскими, так и мужскими гениталиями.
+* Фурри
+? Антропоморфные животные персонажи.
+* Вор (Vore)
+? Акт физического поглощения другого персонажа.
+* Трансформация
+? Изменение физических характеристик драматическим образом (магией или химией); подразумевает получение сексуального удовольствия от самого акта трансформации.
+* Тентакли
+? Проникновение живых щупалец в персонажа; часто подразумевает множественное проникновение.
+* Монстр или Пришелец
+? Различные типы монстров, инопланетян и эстетически необычных персонажей.
+* Призрак
+? Ранее живший, ныне не имеющий физического тела.
 
-#Fluids
-(General)
-* Blood
-? Pertains to the inclusion of blood or the retrieval of blood in any form in a sexual context, or engaging in acts which will draw blood.
-* Watersports
-? Pertains to the inclusion of urine, or the expelling of urine, in any form, in the sexual context of an RP.
-* Scat
-? Pertains to the inclusion of fecal matter or the expelling of fecal matter in any form in the sexual context of an RP.
-* Lactation
-? The act of producing milk from one's breasts, or engaging in sex with a character that produces milk from one's breasts, typically in response to sexual stimulation, and any play that will emanate thereof.
-* Diapers
-? A situation in which at least one character will wear a diaper; typically implies that the diaper will be soiled with urine and/or fecal matter, usually in conjunction with age play or infantilism, but sometimes in conjunction with humiliation.
-* Cum play
-? Any number of situations focused on playing with cum.
+# Жидкости
+(Общее)
+* Кровь
+? Включение крови в сексуальный контекст, или действия, пускающие кровь.
+* Водный спорт (Watersports)
+? Использование или выделение мочи в сексуальном контексте.
+* Скат (Scat)
+? Использование или выделение кала в сексуальном контексте.
+* Лактация
+? Выделение молока из груди (обычно в ответ на стимуляцию) и игры с ним.
+* Подгузники
+? Ношение подгузника; обычно подразумевает загрязнение мочой/калом (в связке с эйдж-плеем или унижением).
+* Игры со спермой
+? Любые ситуации, сфокусированные на играх со спермой.
 
-#Degradation
-(Giving, Receiving)
-* Glory hole
-? Servicing a partner or recieving service from a partner with a physical barrier between the participants
-* Name calling
-? Engaging in an RP in which one character will be called names, in an attempt to elicit either a response of sexual gratification from the emotions correlating to humiliation, or merely as a form of psychological domination or punishment.
-* Humiliation
-? Engaging in an RP in which one character will be embarrassed, typically extremely and/or frequently, in an attempt to elicit either a response of sexual gratification from the emotions correlating to humiliation, or merely as a form of psychological domination or punishment; typically a more intense form of degradation.
+# Деградация
+(Давать, Получать)
+* Глорихол
+? Обслуживание партнера через физический барьер.
+* Оскорбления
+? Обзывание партнера для унижения, психологического доминирования или наказания.
+* Унижение
+? Смущение/унижение персонажа для получения сексуального удовольствия или в качестве наказания; обычно более интенсивная форма деградации.
 
-#Touch & Stimulation
-(Actor, Subject)
-* Cock/Pussy worship
-? Gratuitous acknowledgment of one's partner's genitalia, either verbal and/or physical, or receiving such actions; typically implies oral stimulation.
-* Ass worship
-? Gratuitous acknowledgment of one's partner's ass, either verbal and/or physical, or receiving such actions; typically implies oral stimulation.
-* Foot play
-? The act of incorporating the feet or feet paws into the sexual context of an RP, including but not limited to the worshiping of feet, receiving sexual gratification from the sight or smell of feet and/or humping feet, sometimes to the point of orgasm.
-* Tickling
-? The act of tickling and/or being tickled in a sexual context of an RP; or, receiving sexual stimulation from such.
-* Sensation play
-? Sensation play describes a wide variety of activities, both vanilla and kinky, that use the body's senses as a way to arouse and provide stimulation to a partner. Although sensation play is often related to skin sensations, it doesn't have to be so limited. Sight, taste, and hearing can also be included in sensation play.
-* Electro stimulation
-? The use of sex toys that carry an electrical current; sometimes painful.
+# Прикосновения и Стимуляция
+(Актор, Субъект)
+* Поклонение члену/киске
+? Восхищение гениталиями; обычно подразумевает оральную стимуляцию.
+* Поклонение ягодицам
+? Восхищение ягодицами партнера; обычно подразумевает оральную стимуляцию.
+* Фут-фетиш (Игры с ногами)
+? Восхищение ступнями/лапами, получение удовольствия от их вида, запаха или трения о них.
+* Щекотка
+? Акт щекотки в сексуальном контексте RP или получение стимуляции от нее.
+* Сенсорные игры
+? Использование чувств тела (в ванильных или кинковых практиках) для стимуляции. Хотя часто это связано с кожей, этим не ограничивается. Зрение, вкус и слух также могут быть включены.
+* Электростимуляция
+? Использование секс-игрушек с электрическим током; иногда болезненно.
 
-#Misc. Fetish
-(Giving, Receiving)
-* Fisting
-? The act of placing one's hand(s) and/or arm(s) into a vagina, or receiving such actions.
-* Gangbang
-? When multiple partners, usually 3 or more, engage in sexual intercourse with a single willing partner.
-* Breath play
-? A situation in which at least one character will have physical control over the breathing habits of another character, often by either intermittent choking and/or due to the penetration of the throat.
-* Impregnation
-? Impregnating a character
-* Pregnancy
-? Fetishizing a pregnant character
-* Feminization
-? Feminization is a type of role play that involves imposing traditionally female attributes onto a submissive male partner. It may also involve an adoption of traditionally feminine behaviors and mannerisms.
-* Cuckold / Cuckquean
-? Refers to the act of a character who, within the confines of the RP world has been designated to be in a relationship, will have sexual interaction with a character other than the one who has been predetermined to be in a relationship, in the context of the RP.
+# Прочие Фетиши
+(Давать, Получать)
+* Фистинг
+? Введение руки/кисти во влагалище.
+* Гэнгбэнг
+? Когда несколько партнеров (обычно 3 или более) занимаются сексом с одним согласным партнером.
+* Игры с дыханием
+? Физический контроль над дыханием партнера (прерывистое удушье или глубокое проникновение в горло).
+* Осеменение
+? Оплодотворение персонажа.
+* Беременность
+? Фетишизация беременного персонажа.
+* Феминизация
+? Навязывание традиционно женских атрибутов покорному партнеру-мужчине. Может включать перенятие женского поведения и манер.
+* Куколд / Кукквин
+? Сексуальное взаимодействие персонажа (состоящего в отношениях) с другим персонажем вне этих отношений.
 
-#Pain
-(Giving, Receiving)
-* Light pain
-? Refers to the inclusion of light physical pain due to acts which are directly sexual.
-* Heavy pain
-? Refers to the inclusion of heavy physical pain due to acts which are directly sexual; typically rough or excessive penetrations. This is probably gonna leave a mark.
-* Nipple clamps
-? pressure device applied to nipples to create pain which produces pleasure.
-* Clothes pins
-? Pinching sking between the forks of a clothes pin
-* Caning
-? Caning is a technique used in BDSM in which the dominant repeatedly strikes the submissive with a long flexible cane, usually on the buttocks.
-* Flogging
-? The use of toys, typically associated with BDSM and domination/submission, being employed against a submissive or bottom, particularly referring to contact play involving whips of any type, riding crops, paddles or flogs.
-* Gagging / Choking
-? Being made to gag or choke, either by objects inserted into the mouth or hands/objects around the neck.
-* Beating
-? Being struck with fists or other objects
-* Spanking
-? The act of striking the buttocks of another character, or being the recipient of such; often as a form of erotic foreplay or as punishment in a BDSM setting.
-* Cock/Pussy slapping
-? slapping the genitalia of your partner, or recieving such slaps
-* Cock/Pussy torture
-? Engaging in an RP in which at least one character's genitals will be given negative attention, the intent of which to be to cause physical pain.
-* Hot Wax
-? The act of using wax, typically hot candle wax, as a form of sexual stimulation and/or torture, or receiving such actions.
-* Scratching
-? One character scratching another with their nails or claws, sometimes leaving marks; sometimes but not necessarily painful.
-* Biting
-? The act of biting or being bitten; sometimes painful, sometimes playful.
-* Cutting 
-? The act of cutting a partner to cause pain in a sexual context.
+# Боль
+(Давать, Получать)
+* Легкая боль
+? Легкая физическая боль из-за действий, носящих прямой сексуальный характер.
+* Тяжелая боль
+? Сильная физическая боль из-за действий, носящих прямой сексуальный характер; обычно грубое проникновение. От этого останутся синяки.
+* Зажимы для сосков
+? Устройства, оказывающие давление на соски для создания боли, приносящей удовольствие.
+* Прищепки
+? Защипывание кожи прищепками.
+* Порка тростью (Caning)
+? Техника БДСМ, при которой доминант бьет саба гибкой тростью (обычно по ягодицам).
+* Порка плетью (Flogging)
+? Использование плетей, хлыстов и стеков против саба.
+* Кляпы / Удушение
+? Вызов рвотного рефлекса (вещами во рту) или удушья (руками/предметами на шее).
+* Избиение
+? Удары кулаками или другими предметами.
+* Шлепки (Spanking)
+? Удары по ягодицам; часто как прелюдия или наказание в БДСМ.
+* Удары по члену/киске
+? Шлепки по гениталиям партнера.
+* Пытки члена/киски
+? Негативное внимание к гениталиям с целью причинения физической боли.
+* Горячий воск
+? Использование горячего свечного воска для стимуляции/пыток.
+* Царапание
+? Царапание партнера ногтями/когтями, иногда до следов (необязательно болезненно).
+* Укусы
+? Акт кусания; иногда болезненный, иногда игривый.
+* Порезы (Cutting)
+? Разрезание кожи партнера для причинения боли в сексуальном контексте.
 
             </textarea>
             <button id="KinksOK">Accept</button>
